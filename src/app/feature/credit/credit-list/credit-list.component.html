@@ -1,0 +1,46 @@
+<div class="container">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+        <a routerLink="/credit-create">
+            <img width="20" height="20" src="assets/add-icon.png" title="Add New" />
+        </a>
+    </section>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Movie Id</th>
+                <th>Actor Id</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let credit of credits; let i = index">
+                <td>{{ credit.id }}</td>
+                <td>{{ credit.movie.title}}</td>
+                <td>{{ credit.actor.lastName + "," + credit.actor.firstName }}</td>
+                <td>{{ credit.role }}</td>
+                <td>
+                    <a [routerLink]="['/credit-details/', credit.id]">
+                        <img src="assets/details.png" width="20" height="20" title="Details credit">
+                    </a>
+
+
+                    <a>
+                        <img src="assets/delete.jpg" width="20" height="20" title="Delete Movie"
+                            (click)="delete(credit.id)">
+                    </a>
+
+
+                    <a [routerLink]="['/movie-edit', credit.id]">
+                        <img src="assets/edit.png" width="20" height="20" title="Edit Movie">
+                    </a>
+
+
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>{{ title }}</h2>
+    <form (ngSubmit)="addActor()">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" [(ngModel)]="newActor.firstName" name="firstName" class="form-control"
+                required />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" [(ngModel)]="newActor.lastName" name="lastName" class="form-control"
+                required />
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" [(ngModel)]="newActor.gender" name="gender" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="birthdate">Birthdate</label>
+            <input type="date" id="birthdate" [(ngModel)]="newActor.birthdate" name="birthdate" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Add Actor</button>
+    </form>
+</div>
